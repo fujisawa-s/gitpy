@@ -9,27 +9,30 @@ import json
 import requests
 
 def main():
+    lottery_request()
     
+#所有开奖结果查询列表
+def lottery_request():
     #配置key
     appkey = '9cccc639b813dd68e133be6d4f0e05d3'
     
     #1.双色球开奖结果查询
-    request1(appkey)
+    ssq_request(appkey)
     
     #2.福彩3D开奖结果查询
-    request2(appkey)
+    fcsd_request(appkey)
     
     #3.排列5开奖结果查询
-    request3(appkey)
+    plw_request(appkey)
     
     #4.七星彩开奖结果查询
-    request4(appkey)
+    qxc_request(appkey)
     
     #5.超级大乐透开奖结果查询
-    request5(appkey)
+    dlt_request(appkey)
     
 #ssq开奖结果查询
-def request1(appkey):
+def ssq_request(appkey):
     url = 'http://apis.juhe.cn/lottery/query'
     params = {
         'key' : appkey,#我申请的key
@@ -55,7 +58,7 @@ def request1(appkey):
         print("request api error")
         
 #fcsd开奖结果查询
-def request2(appkey):
+def fcsd_request(appkey):
     url = 'http://apis.juhe.cn/lottery/query'
     params = {
         'key' : appkey,#我申请的key
@@ -81,7 +84,7 @@ def request2(appkey):
         print("request api error")
  
 #plw开奖结果查询
-def request3(appkey):
+def plw_request(appkey):
     url = 'http://apis.juhe.cn/lottery/query'
     params = {
         'key' : appkey,#我申请的key
@@ -107,7 +110,7 @@ def request3(appkey):
         print("request api error") 
  
 #qxc开奖结果查询
-def request4(appkey):
+def qxc_request(appkey):
     url = 'http://apis.juhe.cn/lottery/query'
     params = {
         'key' : appkey,#我申请的key
@@ -133,7 +136,7 @@ def request4(appkey):
         print("request api error")
         
 #dlt开奖结果查询
-def request5(appkey):
+def dlt_request(appkey):
     url = 'http://apis.juhe.cn/lottery/query'
     params = {
         'key' : appkey,#我申请的key
