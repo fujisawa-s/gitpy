@@ -17,20 +17,22 @@ def lottery_request():
     appkey = '9cccc639b813dd68e133be6d4f0e05d3'
     
     #1.双色球开奖结果查询
-    ssq_request(appkey)
+    a = (ssq_request(appkey))
+    print(type(a))
     
     #2.福彩3D开奖结果查询
-    fcsd_request(appkey)
+    b = (fcsd_request(appkey))
     
     #3.排列5开奖结果查询
-    plw_request(appkey)
+    c = (plw_request(appkey))
     
     #4.七星彩开奖结果查询
-    qxc_request(appkey)
+    d = (qxc_request(appkey))
     
     #5.超级大乐透开奖结果查询
-    dlt_request(appkey)
+    e = (dlt_request(appkey))
     
+
 #ssq开奖结果查询
 def ssq_request(appkey):
     url = 'http://apis.juhe.cn/lottery/query'
@@ -48,12 +50,18 @@ def ssq_request(appkey):
         if error_code == 0:
             # 成功请求
             w = res["result"]
-            print('%s:' % w.get('lottery_name'),'\n',
+            ret = ('%s:' % w.get('lottery_name'),'\n',
                   '第%s期开奖结果 ' % w.get('lottery_no'),
                   '开奖日期:%s' % w.get('lottery_date'),'\n',
                   '中奖号码:  %s' % w.get('lottery_res'),'\n')
+            print (ret)
+            return ret
+            
         else:
-            print("%s:%s" % (res["error_code"], res["reason"]))
+            error_ret = ("%s:%s" % (res["error_code"], res["reason"]))
+            print (error_ret)
+            return error_ret
+          
     else:
         print("request api error")
         
@@ -74,12 +82,16 @@ def fcsd_request(appkey):
         if error_code == 0:
             # 成功请求
             w = res["result"]
-            print('%s:' % w.get('lottery_name'),'\n',
+            ret = ('%s:' % w.get('lottery_name'),'\n',
                   '第%s期开奖结果 ' % w.get('lottery_no'),
                   '开奖日期:%s' % w.get('lottery_date'),'\n',
                   '中奖号码:  %s' % w.get('lottery_res'),'\n')
+            return ret
+            print (ret)
         else:
-            print("%s:%s" % (res["error_code"], res["reason"]))
+            error_ret = ("%s:%s" % (res["error_code"], res["reason"]))
+            return error_ret
+            print (error_ret)
     else:
         print("request api error")
  
@@ -100,12 +112,16 @@ def plw_request(appkey):
         if error_code == 0:
             # 成功请求
             w = res["result"]
-            print('%s:' % w.get('lottery_name'),'\n',
+            ret = ('%s:' % w.get('lottery_name'),'\n',
                   '第%s期开奖结果 ' % w.get('lottery_no'),
                   '开奖日期:%s' % w.get('lottery_date'),'\n',
                   '中奖号码:  %s' % w.get('lottery_res'),'\n')
+            return ret
+            print (ret)
         else:
-            print("%s:%s" % (res["error_code"], res["reason"]))
+            error_ret = ("%s:%s" % (res["error_code"], res["reason"]))
+            return error_ret
+            print (error_ret)
     else:
         print("request api error") 
  
@@ -126,12 +142,16 @@ def qxc_request(appkey):
         if error_code == 0:
             # 成功请求
             w = res["result"]
-            print('%s:' % w.get('lottery_name'),'\n',
+            ret = ('%s:' % w.get('lottery_name'),'\n',
                   '第%s期开奖结果 ' % w.get('lottery_no'),
                   '开奖日期:%s' % w.get('lottery_date'),'\n',
                   '中奖号码:  %s' % w.get('lottery_res'),'\n')
+            return ret
+            print (ret)
         else:
-            print("%s:%s" % (res["error_code"], res["reason"]))
+            error_ret = ("%s:%s" % (res["error_code"], res["reason"]))
+            return error_ret
+            print (error_ret)
     else:
         print("request api error")
         
@@ -152,12 +172,16 @@ def dlt_request(appkey):
         if error_code == 0:
             # 成功请求
             w = res["result"]
-            print('%s:' % w.get('lottery_name'),'\n',
+            ret = ('%s:' % w.get('lottery_name'),'\n',
                   '第%s期开奖结果 ' % w.get('lottery_no'),
                   '开奖日期:%s' % w.get('lottery_date'),'\n',
                   '中奖号码:  %s' % w.get('lottery_res'),'\n')
+            return ret
+            print (ret)
         else:
-            print("%s:%s" % (res["error_code"], res["reason"]))
+            error_ret = ("%s:%s" % (res["error_code"], res["reason"]))
+            return error_ret
+            print (error_ret)
     else:
         print("request api error")
  
