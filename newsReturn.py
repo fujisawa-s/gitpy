@@ -9,10 +9,10 @@ import requests
 appkey = "6b56d1c0b502c7223e25b19f8974fae8"
 
 def main():
-    print(get_type('社会'))
+    print(get_news_from_type('关键字'))
     
 
-def get_type(tp): #tp为获取新闻种类
+def get_news_from_type(tp): #tp为获取新闻种类
     url = "http://v.juhe.cn/toutiao/index"
     params = {
         "type": tp ,  #获取新闻种类
